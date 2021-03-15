@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">DOB</th>
+        <th scope="col">EmailAddress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customerList">
+        <td>
+          <a [routerLink]="['view', customer._id]">{{ customer._id }}</a>
+        </td>
+        <td>{{ customer.firstname }}</td>
+        <td>{{ customer.lastname }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.dob }}</td>
+        <td>{{ customer.emailAddress }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
