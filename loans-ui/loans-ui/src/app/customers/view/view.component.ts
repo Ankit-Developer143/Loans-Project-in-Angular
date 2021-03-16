@@ -11,7 +11,6 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class ViewComponent implements OnInit {
   customerId: string = '';
   customerDetails: any;
-  customerResult: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private customerService: CustomerService
@@ -19,11 +18,13 @@ export class ViewComponent implements OnInit {
   //here id refer to customer-routing
   ngOnInit() {
     //capturing id of customer
-    this.activatedRoute.params.subscribe(data => {
+    this.activatedRoute.params.subscribe((data) => {
+      console.log('Sub1');
       this.customerId = data.id;
       console.log(this.customerId);
     });
-    this.customerService.viewCustomer(this.customerId).subscribe(data => {
+    this.customerService.viewCustomer(this.customerId).subscribe((data) => {
+      console.log('Sub2');
       this.customerDetails = data;
       console.log(this.customerDetails);
     });

@@ -6,13 +6,9 @@ var logger = require("morgan");
 
 var cors = require("cors");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+
 var customersRouter = require("./routes/customer");
-var loansRouter = require("./routes/loans");
-var paymentsRouter = require("./routes/payments");
-var invoicesRouter = require("./routes/invoices");
-var settingsRouter = require("./routes/setting");
+
 
 var app = express();
 app.use(cors());
@@ -32,8 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+
+
 
 //HERE CUSTOMER ROUTE
 app.use("/customers", customersRouter);

@@ -26,7 +26,7 @@ export class CustomerService {
   }
   viewCustomer(id) {
     let url = environment.CUSTOMER_BASE_URL + environment.CUSTOMER.GET_CUSTOMER;
-    return this.httpClient.get(url);
+    return this.httpClient.get(`${url}/${id}`);
   }
   editCustomer(id, customerObj) {}
   deleteCustomer(id) {}
